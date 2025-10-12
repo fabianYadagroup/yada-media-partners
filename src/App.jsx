@@ -13,6 +13,7 @@ import './App.css'
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const [formSubmitted, setFormSubmitted] = useState(false)
 
   const scrollToSection = (sectionId) => {
     setActiveSection(sectionId)
@@ -21,6 +22,26 @@ function App() {
       element.scrollIntoView({ behavior: 'smooth' })
     }
     setMobileMenuOpen(false)
+  }
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault()
+    const formData = new FormData(e.target)
+    const name = formData.get('name')
+    const email = formData.get('email')
+    const company = formData.get('company')
+    const message = formData.get('message')
+    
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`New Contact Form Submission from ${name}`)
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCompany: ${company}\n\nMessage:\n${message}`)
+    const mailtoLink = `mailto:fabian@yadagroup.ca?subject=${subject}&body=${body}`
+    
+    // Open mailto link
+    window.location.href = mailtoLink
+    
+    // Show thank you message
+    setFormSubmitted(true)
   }
 
   return (
@@ -328,31 +349,46 @@ function App() {
               <CardDescription>Fill out the form below and we'll get back to you within 24 hours.</CardDescription>
             </CardHeader>
             <CardContent>
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="sr-only">Name</label>
-                  <Input id="name" placeholder="Name" />
-                </div>
-                <div>
-                  <label htmlFor="email" className="sr-only">Email</label>
-                  <Input id="email" type="email" placeholder="Email" />
-                </div>
-                <div>
-                  <label htmlFor="company" className="sr-only">Company</label>
-                  <Input id="company" placeholder="Company" />
-                </div>
-                <div>
-                  <label htmlFor="message" className="sr-only">Message</label>
-                  <Textarea id="message" placeholder="Message" rows="4" />
-                </div>
-                <Button type="submit" className="w-full">Send Message</Button>
-              </form>
+              {!formSubmitted ? (
+                <>
+                  <form onSubmit={handleFormSubmit} className="space-y-4">
+                    <div>
+                      <label htmlFor="name" className="sr-only">Name</label>
+                      <Input id="name" name="name" placeholder="Name" required />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="sr-only">Email</label>
+                      <Input id="email" name="email" type="email" placeholder="Email" required />
+                    </div>
+                    <div>
+                      <label htmlFor="company" className="sr-only">Company</label>
+                      <Input id="company" name="company" placeholder="Company" />
+                    </div>
+                    <div>
+                      <label htmlFor="message" className="sr-only">Message</label>
+                      <Textarea id="message" name="message" placeholder="Message" rows="4" required />
+                    </div>
+                    <Button type="submit" className="w-full">Send Message</Button>
+                  </form>
 
-              <div className="mt-8 pt-8 border-t border-border">
-                <p className="text-sm text-muted-foreground text-center">
-                  Or email us directly at: <a href="mailto:fabian@yadagroup.ca" className="text-primary hover:underline">fabian@yadagroup.ca</a>
-                </p>
-              </div>
+                  <div className="mt-8 pt-8 border-t border-border">
+                    <p className="text-sm text-muted-foreground text-center">
+                      Or email us directly at: <a href="mailto:fabian@yadagroup.ca" className="text-primary hover:underline">fabian@yadagroup.ca</a>
+                    </p>
+                  </div>
+                </>
+              ) : (
+                <div className="text-center py-8">
+                  <CheckCircle className="h-16 w-16 text-primary mx-auto mb-4" />
+                  <h3 className="text-2xl font-bold text-foreground mb-2">Thank You!</h3>
+                  <p className="text-muted-foreground mb-6">
+                    Your message has been sent. We'll get back to you within 24 hours.
+                  </p>
+                  <Button onClick={() => setFormSubmitted(false)} variant="outline">
+                    Send Another Message
+                  </Button>
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>
