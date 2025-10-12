@@ -342,7 +342,7 @@ function App() {
 
               <div className="mt-8 pt-8 border-t border-border">
                 <p className="text-sm text-muted-foreground text-center">
-                  Or email us directly at: <a href="mailto:support@mediapartners.com" className="text-primary hover:underline">support@mediapartners.com</a>
+                  Or email us directly at: <a href="mailto:fabian@yadagroup.ca" className="text-primary hover:underline">fabian@yadagroup.ca</a>
                 </p>
               </div>
             </CardContent>
@@ -357,7 +357,7 @@ function App() {
             <div>
               <div className="flex items-center mb-4">
                 <TrendingUp className="h-6 w-6 text-primary" />
-                <span className="ml-2 text-lg font-bold text-foreground">MediaPartners</span>
+                <span className="ml-2 text-lg font-bold text-foreground">Yada Media Partners</span>
               </div>
               <p className="text-sm text-muted-foreground">Empowering brands through strategic media acquisition and powerful partnerships.</p>
             </div>
@@ -388,7 +388,10 @@ function App() {
             </div>
           </div>
           <div className="border-t border-border pt-8 text-center">
-            <p className="text-sm text-muted-foreground">© 2025 MediaPartners. All Rights Reserved.</p>
+            <p className="text-sm text-muted-foreground">© 2025 Yada Media Partners. All Rights Reserved.</p>
+            <p className="text-sm text-muted-foreground mt-2">
+              Contact: <a href="mailto:fabian@yadagroup.ca" className="text-primary hover:underline">fabian@yadagroup.ca</a>
+            </p>
           </div>
         </div>
       </footer>
