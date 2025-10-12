@@ -1,3 +1,4 @@
+
 import { useState } from 'react'
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card.jsx'
@@ -30,7 +31,7 @@ function App() {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <TrendingUp className="h-8 w-8 text-primary" />
-              <span className="ml-2 text-xl font-bold text-foreground">MediaPartners</span>
+              <span className="ml-2 text-xl font-bold text-foreground">Yada Media Partners</span>
             </div>
             
             {/* Desktop Navigation */}
@@ -42,7 +43,7 @@ function App() {
             </div>
 
             <div className="hidden md:block">
-              <Button onClick={() => scrollToSection('contact')}>Schedule a Call</Button>
+              <Button onClick={() => window.open('https://app.fyxer.com/e/fabian25/30', '_blank')}>Schedule a Call</Button>
             </div>
 
             {/* Mobile menu button */}
@@ -63,7 +64,7 @@ function App() {
               <button onClick={() => scrollToSection('about')} className="block w-full text-left px-3 py-2 text-foreground hover:bg-accent rounded-md">About</button>
               <button onClick={() => scrollToSection('contact')} className="block w-full text-left px-3 py-2 text-foreground hover:bg-accent rounded-md">Contact</button>
               <div className="px-3 py-2">
-                <Button onClick={() => scrollToSection('contact')} className="w-full">Schedule a Call</Button>
+                <Button onClick={() => window.open('https://app.fyxer.com/e/fabian25/30', '_blank')} className="w-full">Schedule a Call</Button>
               </div>
             </div>
           </div>
@@ -75,48 +76,57 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-              Scale Your Brand. <span className="text-primary">Zero Ad Spend.</span> Maximize Impact.
+              3-5x Your Company Valuation in 60 Days. <span className="text-primary">Guaranteed.</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Unlock unparalleled growth through strategic media acquisition and powerful partnerships, transforming your brand's trajectory without relying on costly advertising.
+              Unlock the fastest path to exponential growth through strategic media acquisitions. We guarantee one profitable acquisition within 60 days, or our services are FREE. Stop wasting money on ads and start scaling with unparalleled speed and impact.
             </p>
             <Button size="lg" onClick={() => scrollToSection('services')} className="group">
-              Discover Our Strategy
+              Claim Your Guaranteed Acquisition
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
 
           {/* Value Proposition */}
-          <div className="mt-20 grid md:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Target className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Media Acquisition</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">Gaining earned media, press mentions, and features that elevate your brand's authority and visibility.</p>
-              </CardContent>
-            </Card>
+          <div className="mt-20">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-8">
+              Your Path to Explosive Organic Growth & Valuation Skyrocket
+            </h2>
+            <p className="text-xl text-muted-foreground mb-8 max-w-4xl mx-auto text-center">
+              Are you tired of the endless ad spend treadmill, watching your marketing budget vanish with diminishing returns? We offer a revolutionary alternative: a proven methodology for achieving explosive, sustainable growth and a 3-5x increase in company valuation by leveraging the credibility and direct access of strategic acquisitions and authentic brand collaborations. Our approach cuts through the noise, building genuine connections and crafting compelling narratives that resonate directly with your Ideal Customer Profile (ICP), ensuring your brand not only gets noticed but dominates its niche with unwavering trust and loyalty.
+            </p>
 
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Users className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Strategic Partnerships</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">Collaborating with complementary brands and influencers to expand reach and unlock new opportunities.</p>
-              </CardContent>
-            </Card>
+            <div className="grid md:grid-cols-3 gap-8">
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <Target className="h-12 w-12 text-primary mb-4" />
+                  <CardTitle>Strategic Acquisitions</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">We specialize in acquiring or gaining significant influence within ICP-targeted online communities, content platforms, and audience lists. This provides instant credibility and direct access to highly engaged, pre-qualified audiences – no more guessing games with ad targeting. This is the fastest way to scale and significantly boost your company's valuation.</p>
+                </CardContent>
+              </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <TrendingUp className="h-12 w-12 text-primary mb-4" />
-                <CardTitle>Brand Scaling</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">Achieving significant, sustainable growth through organic strategies and authentic connections.</p>
-              </CardContent>
-            </Card>
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <Users className="h-12 w-12 text-primary mb-4" />
+                  <CardTitle>Brand Partnerships</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">We identify and forge powerful, revenue-generating alliances with complementary brands, industry influencers, and key opinion leaders. These collaborations open doors to new, untapped audiences, shared resources, and mutually beneficial growth opportunities that multiply your reach.</p>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <TrendingUp className="h-12 w-12 text-primary mb-4" />
+                  <CardTitle>Rapid Brand Scaling</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">By focusing on these organic, high-leverage strategies, we help your brand achieve significant, rapid, and sustainable growth. This means expanding your reach exponentially, cementing your reputation as an industry leader, and building a robust foundation for long-term, predictable success – all without the continuous drain of ad expenditures.</p>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -125,7 +135,7 @@ function App() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-accent/50">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-12">
-            Our Proven Framework for Success
+            Our Proven Framework for Guaranteed Success
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -296,7 +306,7 @@ function App() {
               </p>
             </div>
             <div>
-              <img src={organicGrowthImg} alt="Organic Growth" className="rounded-lg shadow-lg w-full" />
+              <img src={organicGrowthImg} alt="Organic Growth" className="rounded-lg shadow-lg" />
             </div>
           </div>
         </div>
@@ -305,37 +315,35 @@ function App() {
       {/* Contact Section */}
       <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-4">
-            Ready to Transform Your Brand?
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-6">
+            Ready for Guaranteed Growth?
           </h2>
-          <p className="text-center text-muted-foreground mb-12">
-            Stop competing for attention with endless ad spend. Start building a legacy of organic growth and authentic connections.
+          <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
+            Stop competing for attention with endless ad spend and start dominating your market. We’re so confident in our ability to deliver, we offer an unbeatable guarantee: One profitable acquisition in 60 days or less, or you don't pay. It's time to build a legacy of organic growth and authentic connections that redefine your brand's success.
           </p>
 
-          <Card>
+          <Card className="max-w-lg mx-auto">
             <CardHeader>
-              <CardTitle>Schedule a Free Consultation</CardTitle>
+              <CardTitle>Secure Your Free Strategy Session Now</CardTitle>
               <CardDescription>Fill out the form below and we'll get back to you within 24 hours.</CardDescription>
             </CardHeader>
             <CardContent>
               <form className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
-                    <Input id="name" placeholder="Your name" />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
-                    <Input id="email" type="email" placeholder="your@email.com" />
-                  </div>
+                <div>
+                  <label htmlFor="name" className="sr-only">Name</label>
+                  <Input id="name" placeholder="Name" />
                 </div>
                 <div>
-                  <label htmlFor="company" className="block text-sm font-medium mb-2">Company</label>
-                  <Input id="company" placeholder="Your company name" />
+                  <label htmlFor="email" className="sr-only">Email</label>
+                  <Input id="email" type="email" placeholder="Email" />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                  <Textarea id="message" placeholder="Tell us about your goals..." rows={5} />
+                  <label htmlFor="company" className="sr-only">Company</label>
+                  <Input id="company" placeholder="Company" />
+                </div>
+                <div>
+                  <label htmlFor="message" className="sr-only">Message</label>
+                  <Textarea id="message" placeholder="Message" rows="4" />
                 </div>
                 <Button type="submit" className="w-full">Send Message</Button>
               </form>
